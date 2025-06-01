@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>projectY</title>
+    <link rel="stylesheet" href="speech.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Jarvis</h1>
+         <div class="image"></div>
+         <div class="load"></div>
+        <div class="start-stop">
+           
+            <button class="start">Start <i class="ri-mic-fill"></i></button>
+           <button class="stop">Stop <i class="ri-mic-off-fill"></i></button>
+            
+        </div>
+    </div>
+    <h1 class="write"></h1>
+
+    <script>
+        const voice = window.SpeechRecognition || window.webkitSpeechRecognition;
+        const recog = new voice();
+        const startBtn = document.querySelector(".start");
+        const stopBtn = document.querySelector(".stop");
+        const speakBtn = document.querySelector(".speak");
+        const writeBtn = document.querySelector(".write");
+        const imageBtn= document.querySelector(".image");
+        const loadBtn = document.querySelector(".load");
+
+        recog.continuous = true;
+
+        recog.onstart = () => {
+            console.log("ACTIVE");
+        };
+
+        recog.onend = () => {
+            console.log("DEACTIVE");
+        };
+
+        startBtn.addEventListener("click", () => {
+            //imageBtn.innerHTML=`  <img src="https://i.gifer.com/Mr3W.gif" class="a" alt="Voice Assistant Active">`
+          
+        alert("started");
+            recog.start();
+        });
+
+       stopBtn.addEventListener("click", () => {
+           // imageBtn.innerHTML=`  <img src="https://i.gifer.com/LCPT.gif" alt="Voice Assistant Active">`
+           alert("Stopped");
+            recog.stop();
+        });
+
+        recog.onresult = function(event) {
+            let curr = event.resultIndex;
+            let transcript = event.results[curr][0].transcript.toLowerCase();
+            
+            writeBtn.innerText = transcript;
+
+            if (transcript.includes("hello jarvis") || transcript.includes("hello")) {
+                readOut("Hello sir");
+                readOut("How can I help you?");
+            }
+
+            if (transcript.includes("open youtube")) {
+                readOut("Opening YouTube");
+                window.open("https://www.youtube.com/watch?v=YwsOCN8woA8");
+            }
+
+            if (transcript.includes("open gemini")) {
+                readOut("Opening Gemini, sir");
+                window.open("https://gemini.google.com/app/4465f1c17f5b1cdd?hl=en-IN");
+            }
+
+            if (transcript.includes("search")) {
+                readOut("Here's the result, sir");
+                let input = transcript.slice(7).trim().split(" ").join("+");
+                window.open(`https://www.google.com/search?q=${input}`);
+            }
+        };
+
+        const readOut = (message) => {
+    const speech = new SpeechSynthesisUtterance();
+    speech.text = message;
+    speech.volume = 1;
+
+    let voices = speechSynthesis.getVoices();
+
+    if (voices.length > 0) {
+        speech.voice = voices.find(voice => voice.name.includes("Google UK English Male")) || voices[0];
+        window.speechSynthesis.speak(speech);
+    } else {
+        // Wait for voices to load, then speak
+        speechSynthesis.onvoiceschanged = () => {
+            voices = speechSynthesis.getVoices();
+            speech.voice = voices.find(voice => voice.name.includes("Google UK English Male")) || voices[0];
+            window.speechSynthesis.speak(speech);
+        };
+    }
+
+    console.log("Speaking out:", message);
+};
+
+
+        window.onload = function () {
+            readOut("Jarvis activated");
+             readOut("How may i help you sir");
+           imageBtn.innerHTML = ` <img src="https://i.gifer.com/LCPT.gif" alt="Voice Assistant Active"> `;
+        };
+    </script>
+</body>
+</html>

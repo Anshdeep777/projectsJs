@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>projectX</title>
+    <link rel="stylesheet" href="projectX.css">
+     <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+  />
+</head>
+<body>
+    <div class="container">
+        <h1 class="y">YOUR SPACE <i class="ri-sticky-note-add-line b"></i></h1>
+        <div class="box">
+            <button class="add-to-notes">Create Notes <i class="ri-quill-pen-fill p"></i></button>
+        </div>
+        <div class="display"></div>
+    </div>
+
+```
+<script>
+    // Corrected helper function
+    function ele(para) {
+        return document.querySelector(para);
+    }
+
+    const createBtn = ele(".add-to-notes");
+    const displayDiv = ele(".display");
+  
+
+    const createArea = () => {
+    const newDiv = document.createElement("div");
+
+    newDiv.innerHTML = `
+        <input class="TITLE" placeholder="TITLE">
+        <textarea spellcheck="false" class="text-area" placeholder="Notes" rows="5" cols="30"></textarea>
+        <div class="colours">
+            <button class="AI"><a href="https://chatgpt.com/" target="_blank"><i class="ri-openai-fill"></i>Ask GPT</a></button>
+            <button class="orange c"><h3><i class="ri-circle-fill"></i></h3></button>
+            <button class="yellow c"><h3><i class="ri-circle-fill"></i></h3></button>
+            <button class="pink c"><h3><i class="ri-circle-fill"></i></h3></button>
+            <button class="itali c"><h3><i class="ri-italic"></i></i></h3></button>
+        </div>
+    `;
+
+    displayDiv.append(newDiv);
+
+    // Target elements **within the newly created note only**
+    const tArea = newDiv.querySelector(".text-area");
+    const orangeBtn = newDiv.querySelector(".orange");
+    const yellowBtn = newDiv.querySelector(".yellow");
+    const italicBtn = newDiv.querySelector(".itali");
+     const pinkBtn = newDiv.querySelector(".pink");
+      const aiBtn = newDiv.querySelector(".AI");
+  const inputTitle=newDiv.querySelector(".TITLE");
+
+      italicBtn.addEventListener("click", () => {
+        
+        tArea.style.fontStyle = "italic";
+    });
+  
+aiBtn.addEventListener("click", () => {
+    navigator.clipboard.writeText(` <My Note Titled> ${inputTitle.value} ${tArea.value}
+         can you give some suggestions?`);
+    alert("Text Copied");
+});
+
+    orangeBtn.addEventListener("click", () => {
+        tArea.style.backgroundColor = "orangered";
+    });
+    pinkBtn.addEventListener("click", () => {
+        tArea.style.backgroundColor = "pink";
+    });
+
+    yellowBtn.addEventListener("click", () => {
+        tArea.style.backgroundColor = "yellow";
+    });
+    };
+
+
+    createBtn.addEventListener("click", createArea);
+</script>
+
+
+</body>
+</html>

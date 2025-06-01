@@ -1,0 +1,154 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #ffffff;
+
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.heading {
+    /* align-items: center; */
+    color: white;
+    display: flex;
+    height: 20vh;
+    width: 100vw;
+    background-color: rgb(252, 252, 252);
+    border-bottom: 1px solid rgb(0, 0, 0);
+
+}
+
+.e {
+
+    width: 10%;
+    height: 20vh;
+
+}
+
+.s1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    /* border: 1px solid red; */
+    margin-left: 20px;
+}
+
+.s2 {
+    /* margin-top: 5px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px gold solid; */
+    width: 10%;
+    
+
+}
+
+.s3 {
+    /* margin-top: 5px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px black solid; */
+    color: black;
+   
+
+}
+
+.s4 {
+    /* margin-top: 5px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px black solid; */
+    color: black;
+
+}
+
+button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+select {
+    width: 60px;
+    border-radius: 10px;
+    border: 1px solid #aaa;
+    outline: none;
+    /* background-color: rgba(125, 177, 198, 0.753); */
+}
+
+#font-color-select {
+    border-radius: 10px;
+    /* color:red; */
+}
+
+.text {
+outline: none;
+    height: 80vh;
+    padding: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    word-wrap: break-word;
+    font-size: 16px;
+    /* line-height: 1.6; */
+
+}
+
+.colors {
+    margin-top: 5px;
+}
+
+.h {
+    background-color: lightgreen;
+}
+
+/* input{
+    width: 50px;
+}
+input.line {
+    border-radius: 8px;
+    padding: 2px 4px;
+    border: 1px solid #aaa;
+    outline: none;
+} */
+
+
+/* body.dark-theme {
+    background: #181818;
+    color: #fff;
+} */
+
+body.dark-theme .heading {
+    background: #222;
+    color: #fff;
+}
+
+body.dark-theme select,
+body.dark-theme button {
+    background: #333;
+    color: #fff;
+    /* border-color: #444; */
+}
+body.dark-theme .e{
+     background: #333;
+    color: #fff;
+    border-color: #444;
+}
+
+.order{
+    margin-top: 5px;
+    display: flex;
+}

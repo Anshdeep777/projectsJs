@@ -1,0 +1,89 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #02011e;
+   
+
+}
+
+.header {
+    position: fixed;
+    width: 100vw;
+    border-bottom: grey 2px solid;
+    height: 10vh;
+    background-color: #02011e; 
+    z-index: 1000; 
+    box-shadow: 0 1px 8px rgb(234, 255, 4);
+
+}
+
+.page1{
+   
+   padding-top:10vh;
+    height: 90vh;
+     background-color: #02011e;
+    display: flex;
+    width: 100vw;
+}
+
+.second{
+padding: 40px;
+    /* border: 1px white solid; */
+    width: 60vw;
+    height: 60vh;
+    margin-top: 30px;
+    line-height: 25px;
+}
+.third{
+    border: 1px white solid;
+    width: 60vh;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: 3%;
+
+    
+    
+}
+.third img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    /* border-radius: 50%; */
+    display: block;
+    
+}
+.second h1{
+    color: white;
+    display: inline;
+}
+.second h4{
+    color: white;}
+    
+    .gold {
+    color: gold !important;
+}
+h5{
+    color: white;
+    display: inline;
+}
+.green{
+    color: limegreen;
+}
+.red{
+    color:limegreen;
+}
+    
+
+/* page 2 */
+.page2{
+    height: 100vh;
+    width: 100vw;
+    background-color: brown;
+}

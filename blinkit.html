@@ -1,0 +1,189 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blinkit</title>
+    <link rel="stylesheet" href="blinkit.css">
+    <link rel="stylesheet" href="media.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+
+<body>
+    <div class="main">
+        <div class="overlay"></div>
+
+        <div class="header">
+            <div class="icon"><img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQabSfzaxvkMUk7-SFiESSV9yc7pt66cs0n8xI3wz6xALqb0I29hLfPV9UeqtBpmVfdZo8&usqp=CAU">
+                   
+            </div>
+            <div class="text-area">
+                <div class="time">
+                    <h6 class=time-update>Delivery in 12 minutes</h6>
+                </div>
+                <div class="location">
+                    <p>SIRSA,HARYANA 125055,India <i class="ri-arrow-down-s-line"></i></p>
+                </div>
+                
+            </div>
+   <i class="ri-search-line"></i> <input class="search" placeholder="search"><button class="login">Login</button>
+    <button class="viewcart">Cart</button>
+        </div>
+
+        <div class="main_item"><img
+                src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=3240/layout-engine/2022-05/Group-33704.jpg">
+        </div>
+        <div class="banner"></div>
+        <div class="more"></div>
+        <div class="more2"></div>
+        <div class="add"></div>
+    </div>
+    <script>
+        const bannerDisplay = document.querySelector(".banner");
+    const locationChange = document.querySelector(".location");
+const textArea = document.querySelector(".text-area");
+const overlay = document.querySelector(".overlay");
+const moreItems = document.querySelector(".more")
+const moreItems2 = document.querySelector(".more2")
+const addItems=document.querySelector(".add");
+const arr4=[
+    picture1={
+        
+        name:"Amul Masti Pouch Curd",
+        img:"https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/app/assets/products/sliding_images/jpeg/6ae62ec2-3b13-4fff-b052-2ff3d4ef2d16.jpg?ts=1726473593"
+    },
+    picture2={
+    name:"Amul Gold Full Cream Milk",
+    img:"https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/app/assets/products/sliding_images/jpeg/1c0db977-31ab-4d8e-abf3-d42e4a4b4632.jpg?ts=1706182142"}
+]
+arr4.forEach((item)=>{
+    addItems.innerHTML+=`<div class="one"><img src=${item.img}><p>${item.name}</p><button class="addcart">ADD</button></div>`;
+})
+
+locationChange.addEventListener("click", () => {
+    overlay.style.display = "block";
+    if (!document.querySelector(".clicked")) {
+        const newDiv = document.createElement("div");
+        newDiv.classList.add("clicked");
+        const input = document.createElement("input");
+        input.placeholder = "search city location";
+        newDiv.appendChild(input);
+        document.body.appendChild(newDiv); 
+    }
+});
+
+overlay.addEventListener("click", () => {
+    overlay.style.display = "none";
+    const popup = document.querySelector(".clicked");
+    if (popup) popup.remove();
+});
+
+
+
+        const arr = [
+            picture1 = {
+                img: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=900/layout-engine/2023-07/pharmacy-WEB.jpg"
+            },
+            picture2 = {
+                img: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=900/layout-engine/2023-07/Pet-Care_WEB.jpg"
+            },
+            picture3 = {
+                img: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=900/layout-engine/2023-03/babycare-WEB.jpg"
+            }
+        ]
+
+        arr.forEach((item) => {
+            bannerDisplay.innerHTML += `<div class="item"><img
+                src=${item.img}>
+        </div>`
+        })
+
+
+
+        const arr2 = [
+            picture1 = {
+                img: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/layout-engine/2022-12/paan-corner_web.png"
+            },
+            picture2 = {
+                img: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/layout-engine/2022-11/Slice-2_10.png"
+            },
+            picture3 = {
+                img: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/layout-engine/2022-11/Slice-4_9.png"
+            },
+            picture4 = {
+                img: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/layout-engine/2022-11/Slice-5_4.png"
+            },
+            picture5 = {
+                img: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/layout-engine/2022-11/Slice-6_5.png"
+            },
+            picture6 = {
+                img: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/layout-engine/2022-11/Slice-7_3.png"
+            },
+            picture7 = {
+                img: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/layout-engine/2022-11/Slice-8_4.png"
+            },
+            picture8 = {
+                img: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/layout-engine/2022-11/Slice-9_3.png"
+            },
+            picture9 = {
+                img: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/layout-engine/2022-11/Slice-3_9.png"
+            },
+            picture10 = {
+                img: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/layout-engine/2022-11/Slice-10.png"
+            }
+        ]
+
+        arr2.forEach((item) => {
+            moreItems.innerHTML += `<div class="item2"><img
+                src=${item.img}>
+        </div>`
+        })
+
+
+        const arr3 = [
+            picture1 = {
+                img: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/layout-engine/2022-11/Slice-11.png"
+            },
+            picture2 = {
+                img: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/layout-engine/2022-11/Slice-12.png"
+            },
+            picture3 = {
+                img: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/layout-engine/2022-11/Slice-13.png"
+            },
+            picture4 = {
+                img: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/layout-engine/2022-11/Slice-14.png"
+            },
+            picture5 = {
+                img: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/layout-engine/2022-11/Slice-15.png"
+            },
+            picture6 = {
+                img: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/layout-engine/2022-11/Slice-7_3.png"
+            },
+            picture7 = {
+                img: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/layout-engine/2022-11/Slice-16.png"
+            },
+            picture8 = {
+                img: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/layout-engine/2022-11/Slice-17.png"
+            },
+            picture9 = {
+                img: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/layout-engine/2022-11/Slice-19.png"
+            },
+            picture10 = {
+                img: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/layout-engine/2022-11/Slice-20.png"
+            }
+        ]
+
+        arr3.forEach((item) => {
+            moreItems2.innerHTML += `<div class="item3"><img
+                src=${item.img}>
+        </div>`
+        })
+        
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+<html>
+
+<head>
+    <title>
+
+        gA.I alpha
+
+    </title>
+    <link rel="stylesheet" href="gA1alpha.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="heading">
+        <a href="http://127.0.0.1:5500/projectsJs/speech.html"> <button><i class="ri-mic-ai-line mic"></i>
+                gVoice</button></a>
+        <a href="http://127.0.0.1:5500/qrcode.html" target="_blank"><button><i class="ri-qr-code-line qr"></i>
+                genQr</button></a>
+        <a href="http://127.0.0.1:5500/weather.html"><button><i class="ri-thunderstorms-line weather"></i>
+                gWeather</button></a>
+        <a href="http://127.0.0.1:5500/projectsJs/projectX.html" target="_blank"><button><i
+                    class="ri-sticky-note-line note"></i> gNotes</button></a>
+
+        <button class="logo">
+          
+        </button>
+    </div>
+    <div class="chat-container">
+          
+        <div class="chat-window">
+            <h1 class="alpha"><span class="ga">gA.I</span>-αLPHA <i class="ri-voice-ai-line voice"></i></h1>
+        </div>
+        <div class="chat-box" contenteditable="true" data-placeholder="Ask gA.I alpha">
+        </div>
+    </div>
+</body>
+<script>
+    let chatBox = document.querySelector(".chat-window");
+    let inputBox = document.querySelector(".chat-box");
+
+    const apiKey = "AIzaSyD7hyVG5RNQajBu_vsjIkPwy_t0BZTA9gQ"; // Keep this safe in real apps!
+    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
+
+    const replyFunc = (userMsg) => {
+        chatBox.innerHTML += `<div class="message-user">${userMsg}</div>`;
+
+        const gAI = async () => {
+            try {
+                const response = await fetch(apiUrl, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        contents: [
+                            {
+                                parts: [{ text: userMsg }]
+                            }
+                        ]
+                    })
+                });
+
+                const data = await response.json();
+
+                const aiRep = data?.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I couldn't respond.";
+                chatBox.innerHTML += `<div class="message-ai"><i class="ri-bard-line voice"></i><p>${aiRep.replace(/\*\*/g, "")}</p></div>`;
+                //  chatBox.scrollTop = chatBox.scrollHeight;
+
+            } catch (err) {
+                console.error(err);
+                chatBox.innerHTML += `<div class="message-error">Error: ${err.message}</div>`;
+            }
+        };
+
+        gAI(); // Call the async function
+    };
+
+    inputBox.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            const msg = inputBox.innerText.trim();
+            if (msg) {
+                replyFunc(msg);
+                inputBox.innerText = "";  // Clear input
+            }
+        }
+    });
+</script>
+
+
+
+
+
+</body>
+
+</html>

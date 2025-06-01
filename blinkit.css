@@ -1,0 +1,179 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.main{
+    height: 100%;
+    width: 100%;
+
+}
+.header{
+    z-index: 1000;
+    position: fixed;
+    width: 100%;
+   height: 12vh;
+   border-bottom: 0.5px rgb(240, 233, 233) solid;
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+.search{
+    margin-left: 20px;
+    background-color: rgba(211, 213, 213, 0.182);
+
+    border: 0.5px solid aliceblue;
+    flex: 1;
+}
+
+p{
+    font-size: 8px;
+}
+ .icon{
+    height: 10vh;
+    width: 12vw;
+     border-right: 0.5px rgb(240, 233, 233) solid;
+    margin: 1%;
+ }
+ .icon img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+ }
+.main_item{
+   width: 80vw;
+   margin: auto;
+    height: 35vh;
+    /* background-color: orange; */
+    
+}
+.main_item img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+
+}
+.banner{
+    width: 80vw;
+    display: flex;
+    margin: auto;
+    /* background-color: cyan; */
+  
+}
+.clicked {
+    position: fixed; /* absolute → fixed for viewport centering */
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    height: 15vh;
+    width: 40vw;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border: 1px solid black;
+    z-index: 100;
+}
+
+input{
+outline: none;
+border: 1px grey solid;
+   
+    height: 25px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+
+.item {
+
+    flex-basis: 23%;
+    margin: 1%;
+    cursor: pointer;
+}
+
+.item img {
+    width: 100%;
+}
+.overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.4);
+    z-index: 99;
+    display: none;
+}
+.more{
+      width: 80vw;
+    display: flex;
+    margin: auto;
+
+}
+
+.item2 img {
+    width: 100%;
+    cursor: pointer;
+}
+.more2{
+      width: 80vw;
+    display: flex;
+    margin: auto;
+
+}
+
+
+.item3 img {
+    width: 100%;
+    cursor: pointer;
+}
+.add{
+   width: 80vw;
+   display: flex;
+   margin: auto;
+   
+   /* border: black 1px solid; */
+}
+button{
+    cursor: pointer;
+}
+.one {
+    border-radius: 5px;
+    flex-basis: 15%;
+    border: 1px solid;
+    margin: 1%;
+    display: flex;              /* Make it a flex container */
+    flex-direction: column;     /* Stack children vertically */
+    justify-content: space-between; /* Space out elements vertically */
+    height: 100%;               /* Ensure it fills the parent's height if needed */
+    position: relative;  
+      border-color: aliceblue;
+      box-shadow: 1px 0px 10px rgba(73, 73, 73, 0.217);       /* For absolute positioning if needed */
+}
+
+.one img {
+    border-radius: 5px;
+  
+    width: 100%;
+    /* Optionally add: */
+    /* flex-grow: 1; */
+}
+
+.addcart {
+    background-color: rgba(86, 234, 86, 0.131);
+    align-self: flex-end;       /* Align the button to the right horizontally */
+    margin-top: 8px;      
+    padding: 4px 4px;
+    padding-left: 12px;
+    padding-right: 12px;
+    color: rgb(64, 181, 64);
+    border-radius: 5px;
+    border:0.5px solid rgba(64,181,64);
+    font-size: 8px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    font-weight: 500;      /* Add spacing from the image */
+}
+.one p{
+    text-align: center;
+    font-weight: 600;
+}

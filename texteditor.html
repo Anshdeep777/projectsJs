@@ -1,0 +1,157 @@
+<html>
+
+<head>
+    <title>gText</title>
+    <link rel="stylesheet" href="texteditor.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="heading">
+            <div class="s1 e">
+              <button class="theme"><i class="ri-t-shirt-2-line"></i></button>
+                    <button class="b">B</button>
+                <button class="f">I</button>
+                <button class="g"><i class="ri-underline"></i></button>
+                
+            </div>
+            <div class="s2 e">
+                <button class="family"><i class="ri-font-family"></i>
+                    <!-- Font Family Dropdown -->
+                    <select id="font-family-select">
+                        <option value="Arial">Arial</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Verdana">Verdana</option>
+                        <option value="Courier New">Courier New</option>
+                        <option value="Tahoma">Tahoma</option>
+                        <option value="Comic Sans MS">Comic Sans MS</option>
+                    </select>
+                </button>
+                <button class="colors"><i class="ri-font-color c"></i>
+                    <select id="font-color-select">
+                        <option value="Black">Black</option>
+                        <option value="white">White</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Red">Red</option>
+                    </select> </button>
+
+            </div>
+            <div class="s3 e">
+                <button><i class="ri-paint-fill bg"></i>
+                    <select id="font-bgcolor-select">
+
+                        <option value="White">White</option>
+                        <option value="skyblue">skyblue</option>
+                        <option value="Orange">Orange</option>
+                        <option value="Yellow">yellow</option>
+                        <option value="Green">Green</option>
+                    </select></button>
+                     <button><i class="ri-mark-pen-line"></i>
+                    <select id="font-high-select">
+
+                        <option value="None">None</option>
+                        <option value="skyblue">skyblue</option>
+                        <option value="Orangered">Orange</option>
+                        <option value="Yellow">yellow</option>
+                        <option value="Green">Green</option>
+                    </select></button>
+            </div>
+              <div class="s4 e">
+                <button><i class="ri-font-size-2"></i>
+                    <select id="font-size-select">
+
+                        <option value="1">10px</option>
+            <option value="2">13px</option>
+            <option value="3" selected>16px (Default)</option>
+            <option value="4">18px</option>
+            <option value="5">24px</option>
+            <option value="6">32px</option>
+            <option value="7">48px</option>
+                    </select></button>
+                     <!-- <button><i class="ri-mark-pen-line"></i>
+                    <select id="font-high-select">
+
+                        <option value="None">None</option>
+                        <option value="skyblue">skyblue</option>
+                        <option value="Orangered">Orange</option>
+                        <option value="Yellow">yellow</option>
+                        <option value="Green">Green</option>
+                    </select></button> -->
+                    
+                    <div class="order">
+                    <button class="bullets"><i class="ri-list-unordered"></i></button>
+                     <button class="bulleto"><i class="ri-list-ordered"></i></button></div>
+
+            </div>
+        </div>
+        <div contenteditable="true" class="text" spellcheck="false"></div>
+    </div>
+   <script>
+    const textContent = document.querySelector(".text");
+    const fontFam = document.querySelector("#font-family-select");
+    const fontColor = document.querySelector("#font-color-select");
+    const bgHigh = document.querySelector("#font-high-select");
+     const bgColor = document.querySelector("#font-bgcolor-select");
+    const biuSelect = document.querySelector("#BIU");
+    const lSpace = document.querySelector(".line");
+    const bold=document.querySelector(".b");
+    const size= document.getElementById("font-size-select");
+    const underline = document.querySelector(".g");
+    const theme= document.querySelector(".theme");
+    const heading=document.querySelector(".heading");
+    theme.addEventListener("click", () => {
+    document.body.classList.toggle("dark-theme");
+});
+
+
+const edit = (command, bool, value) => {
+    return document.execCommand(command, bool, value);
+}
+
+fontColor.addEventListener("change", () => {
+    textContent.focus();
+    edit("foreColor", false, fontColor.value);
+});
+fontFam.addEventListener("change",()=>{
+    textContent.focus();
+    edit("fontName", false, fontFam.value);
+});
+bgColor.addEventListener("change",()=>{
+    textContent.style.backgroundColor=bgColor.value;
+
+})
+bgHigh.addEventListener("change",()=>{
+   textContent.focus();
+   if(bgHigh.value==="None"){
+    edit("backcolor",false,bgColor.value);
+   }
+   else{
+   edit("backColor",false,bgHigh.value);}
+
+});
+bold.addEventListener("click",()=>{
+textContent.focus() 
+edit("bold",false,null);}
+);
+size.addEventListener("change",()=>{
+    textContent.focus();
+    edit("fontSize",false,size.value);
+})
+underline.addEventListener("click", () => {
+    textContent.focus();
+    edit("underline", false, null);
+});
+const bullets = document.querySelector('.bullets');
+const bulleto = document.querySelector('.bulleto');
+bullets.addEventListener('click', () => {
+    textContent.focus();
+    document.execCommand('insertUnorderedList', false, null);
+});
+bulleto.addEventListener('click', () => {
+    textContent.focus();
+    document.execCommand('insertOrderedList', false, null);
+});
+
+</script>

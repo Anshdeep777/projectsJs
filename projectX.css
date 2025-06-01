@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding:0;
+    font-family: system-ui;
+    box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    min-height:100vh;
+   background: linear-gradient(45deg, #93D0DE, #631AE2);
+    padding: 10px;
+}
+.add-to-notes{
+   padding: 5px;
+      border-radius: 30px;
+     background: linear-gradient(45deg, #D0D0C2, #059C90);
+
+
+}
+h1{
+    color: whitesmoke;
+    text-align: center;
+}
+.b{
+    color:orangered;
+}
+.y{
+    color:yellow;
+}
+
+
+
+.display {
+    margin-top: 10px;
+  display: grid;
+  grid-template-columns: 250px 250px auto; 
+  gap:40px/* 3 rows */
+}
+.text-area{
+    padding: 10px;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+}
+input{
+    width:215px;
+    margin-bottom: 3px;
+    border: none;
+    border-radius: 20px;
+    
+}
+.TITLE{
+    text-align: center;
+    font-weight: bolder;
+}
+
+.colours{
+    display: flex;
+}
+.c{
+   padding: 5px;
+   
+    border-radius: 50px;
+    cursor: pointer;
+     border: none;
+    background-color: transparent;
+}
+.orange{
+    
+   
+    color:orangered;
+    cursor: pointer;
+}
+.yellow{
+margin-left:2px ;
+color:yellow;
+}
+.pink{
+    color:pink;
+  
+}
+
+.AI{
+    background: linear-gradient(45deg, #264ACF, #C8F5AA);
+    color:blue;
+    border-radius: 20px;
+    padding-left: 4px;
+    padding-right: 4px;
+
+    
+
+}
+a{
+    text-decoration: none;
+    color:white;
+}
+.itali{
+    color:white;
+    font-style: italic;
+}
+button{
+    cursor: pointer;
+}
